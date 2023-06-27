@@ -1,0 +1,12 @@
+@charset "UTF-8";    /* 把样式表的编码设置为统一码 UTF-8 */
+
+/* first-code.html <section> CSS Begin */
+.typewriter-text {
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);    /* 添加文字阴影效果，偏移值为5px水平和5px垂直，模糊半径为10px，颜色为半透明黑色 */
+    font-size: 75px;    /* 字体75px */
+    color: white;    /* 字体颜色为白色 */
+    display: flex;    /* 将元素以弹性布局方式显示 */
+    justify-content: center;    /* 在主轴上居中对齐 */
+    padding: 225px 0;    /* 设置上下内边距为225像素，左右内边距为0 */
+}
+/* first-code.html <section> CSS End */

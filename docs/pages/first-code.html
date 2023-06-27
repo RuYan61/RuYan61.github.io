@@ -1,0 +1,106 @@
+<!DOCTYPE html>    <!-- <!DOCTYPE> 指示 web 浏览器该页面使用 HTML5 版本进行编写的指令 -->
+<html lang="zh">    <!-- <html> 标签可告知浏览器其自身是一个 HTML 文档；lang 属性规定元素内容的语言。 -->
+    <head>    <!-- <head> 标签用于定义文档的头部，它是所有头部元素的容器。 -->
+        <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+            <!-- 引入名为 "style.css" 的 CSS 样式表文件，用于定义网页的样式和布局。文件路径为 "../css/style.css"。该样式表适用于所有媒体类型（all）。 -->
+        <link href="../css/first-code.css" rel="stylesheet" type="text/css" media="all">
+            <!-- 引入名为 "first-code.css" 的 CSS 样式表文件，用于定义网页的样式和布局。文件路径为 "../css/first-code.css"。该样式表适用于所有媒体类型（all）。 -->
+            <!--
+                <link> 标签定义文档与外部资源的关系；
+                href 属性：规定被链接文档的位置；
+                rel 属性stylesheet 值：文档的外部样式表。
+                type 属性：规定被链接文档的 MIME 类型；
+                media 属性all 值：规定被链接文档将显示在所有设备上。
+            -->
+        <link rel="shortcut icon" href="../images/favicon.ico">    <!-- 为网页标题添加图标 -->
+
+        <!--
+            <meta> 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词；
+            <meta> 标签位于文档的头部，不包含任何内容；
+            <meta> 标签的属性定义了与文档相关联的名称/值对；
+            注释：<meta> 标签永远位于 head 元素内部；
+            注释：元数据总是以名称/值的形式被成对传递的。
+            charset 属性规定 HTML 文档的字符编码，
+            常用值：
+                UTF-8 - Unicode 的字符编码、
+                ISO-8859-1 - 拉丁字母的字符编码，
+            理论上，可以使用任何字符编码，但没有浏览器能够理解所有编码，
+            字符编码使用得越广泛，浏览器理解它的机会就越大；
+            content 属性给出了与 http-equiv 或 name 属性相关的值；
+            name 属性规定元数据的名称；
+            name 属性规定内容属性的信息/值的名称；
+            name 属性中 author 值规定文档作者的姓名；
+            name 属性中 description 值规定页面的描述，搜索引擎可以选择此描述来显示搜索结果；
+            name 属性中 keywords 值规定以逗号分隔的关键字列表 - 与页面相关（通知搜索引擎该页面的内容），
+            提示：请始终规定关键字（搜索引擎需要对页面进行分类）；
+            name 属性中 generator 值用于标明网页是什么软件做的；
+            name 属性中 robots 值用来告诉爬虫哪些页面需要索引，哪些页面不需要索引；
+            name 属性中 build 值通过设置可以设定网站建立的日期；
+            name 属性中 copyright 值用于标注版权信息；
+            name 属性中 reply-to 值设定联系人的邮箱。
+        -->
+        <meta charset="UTF-8">    <!-- charset 属性规定 HTML 文档的字符编码为UTF-8 - Unicode 的字符编码。 -->
+        <meta name="author" content="Yu Haoyan(Student Number:22116101275)">
+            <!-- name 属性中 author 值规定文档作者的姓名。 -->
+        <meta name="description" content="个人博客系统的设计与实现-JavaScript Assignment Blog">
+            <!-- name 属性中 description 值规定页面的描述，搜索引擎可以选择此描述来显示搜索结果。 -->
+        <meta name="keywords " content="JavaScript,网站设计,Blog,Assignment">
+            <!-- name 属性中 keywords 值规定以逗号分隔的关键字列表 - 与页面相关（通知搜索引擎该页面的内容）。 -->
+        <meta name="generator" content="Visual Studio Code">    <!-- name 属性中 generator 值用于标明网页是什么软件做的。 -->
+        <meta name="robots" content="none">    <!-- name 属性中 robots 值用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。 -->
+        <meta name="build" content="2023.06.14">    <!-- name 属性中 build 值通过设置可以设定网站建立的日期。 -->
+        <meta name="copyright" content="Yu Haoyan">    <!-- name 属性中 copyright 值用于标注版权信息。 -->
+        <meta name="reply-to" content="y15601379543@gmail.com">    <!-- name 属性中 reply-to 值设定联系人的邮箱。 -->
+
+        <title>我们的第一段JS代码-JavaScript Assignment Blog</title>    <!-- <title> 元素定义文档的标题。 -->
+    </head>
+
+    <body>    <!-- body 元素定义文档的主体 -->
+        <header>    <!-- 网页的头部部分 -->
+            <nav>    <!-- <nav> 标签定义导航链接的部分，首页按钮 -->
+                <a href="../index.html">    <!-- <a> 标签定义超链接，用于从当前页面链接到其他页面。 -->
+                    <button id="homeButton">JavaScript Assignment Blog</button>
+                        <!-- 
+                            创建一个按钮元素，用于返回主页。id 属性为 "homeButton"，用于在 JavaScript 中引用该按钮。
+                            按钮上显示的文本为 "JavaScript Assignment Blog"。 
+                        -->
+                </a>
+            </nav>
+            
+            <nav class="top-nav">    <!--<nav> 标签定义导航链接的部分。顶部导航栏。-->
+                <input type="text" id="search" onkeypress="handleKeyPress(event)" placeholder="输入搜索内容...">
+                    <!-- 
+                        创建一个文本输入框，用于搜索功能。id 属性为 "search"，用于在 JavaScript 中引用。
+                        onkeypress 事件监听按键操作，调用 handleKeyPress 函数处理按键事件。
+                        placeholder 属性为文本框的占位符文本，提示用户输入搜索内容。 
+                    -->
+                <a href="calculator.html">在线计算器</a>    <!-- <a> 标签定义超链接，用于从当前页面链接到其他页面。 -->
+                <a href="graduate.html">毕业倒计时</a>    <!-- <a> 标签定义超链接，用于从当前页面链接到其他页面。 -->
+                <a href="background.html">壁纸轮播</a>    <!-- <a> 标签定义超链接，用于从当前页面链接到其他页面。 -->
+                <a href="first-code.html">我们的第一段JS代码</a>    <!-- <a> 标签定义超链接，用于从当前页面链接到其他页面。 -->
+                <a href="../index.html">首页</a>    <!-- <a> 标签定义超链接，用于从当前页面链接到其他页面。 -->
+            </nav>
+        </header>
+
+        <section>    <!--<section> 标签定义文档中的节（ section 、区段）。网页中间部分，即每个人编写的代码部分。-->
+            <div id="typewriter" class="typewriter-text"></div>
+                <!-- 
+                    创建一个 div 元素，用于实现打字机效果。id 属性为 "typewriter"，用于在 JavaScript 中引用该元素。
+                    class 属性为 "typewriter-text"，用于样式控制和选择器选择。 
+                -->
+        </section>
+
+        <footer>    <!--网页的足部部分-->
+            <p class="footerAuthor">Author: Yu Haoyan</p>
+                <!-- 
+                    创建一个段落元素，用于显示作者信息。class 属性为 "footerAuthor"，用于样式控制和选择器选择。
+                    显示的作者信息为 "Yu Haoyan"。 
+                -->
+        </footer>
+
+        <script type="text/javascript" src="../js/script.js"></script>
+            <!-- 引入名为 "script.js" 的 JavaScript 文件，用于提供额外的脚本功能。文件路径为 "../js/script.js"。 -->
+        <script type="text/javascript" src="../js/first-code.js"></script>
+            <!-- 引入名为 "first-code.js" 的 JavaScript 文件，用于提供网页的主要脚本功能。文件路径为 "../js/first-code.js"。 -->
+    </body>
+</html>

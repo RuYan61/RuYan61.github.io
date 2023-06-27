@@ -1,0 +1,130 @@
+@charset "UTF-8";    /* 把样式表的编码设置为统一码 UTF-8 */
+
+@font-face {    /* 指定一种名为 "JetBrains Mono" 的字体，并规定可以找到它的 URL */
+    font-family: 'JetBrains Mono';    /* 定义字体名称 */
+    src:url('../fonts/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff');    /* 定义字体文件路径 */
+}
+
+*{    /* 针对所有的HTML元素定义样式 */
+    margin: 0;    /* 外边距为0 */
+    padding: 0;    /* 内边距为0 */
+    box-sizing: border-box;    /* 盒子的宽度值和高度值包含元素的内边距和边框 */
+}
+
+/* <body> CSS Begin */
+body{
+    margin:0 auto;    /* 页面自动居中对齐 */
+    font-family: "JetBrains Mono";    /* 字体为"JetBrains Mono" */
+    background: white top center no-repeat border-box fixed url(../images/background.jpg);
+        /*
+            background 简写属性在一个声明中设置所有的背景属性。
+            按照设置顺序，依次是：
+                background-color 属性color_name 值；background-position 属性top center 值；background-repeat 属性no-repeat 值；
+                background-origin 属性border-box 值；background-attachment 属性fixed 值；background-image 属性url('URL') 值。
+            lightpink：背景颜色为lightpink；
+            top center：背景图像顶端居中对齐；
+            no-repeat：背景图像仅显示一次，不重复；
+            border-box：背景图像相对于边框盒来定位；
+            fixed：当页面的其余部分滚动时，背景图像不会移动；
+            url(../images/default.png)：指向图像的路径
+        */
+    background-size: cover;    /* 将背景图片按比例缩放以覆盖整个背景区域 */
+    position: relative;    /* 相对定位 */
+    min-height: 100vh;    /* 整个body会被撑开至屏幕高度一致。为了footer部分能自动置底。 */
+    backdrop-filter: blur(5px);    /* 应用背景模糊滤镜，模糊程度为5像素 */
+    -webkit-backdrop-filter: blur(5px);    /* 应用webkit私有的背景模糊滤镜，模糊程度为5像素 */
+}
+
+a{    /* 设置超链接的样式，去除文本超链接下划线 */
+    text-decoration: none;    /* 无修饰 */
+}
+
+/* <header> CSS Begin */
+header{    /* <header>标签对应显示区域的划分和定义 */
+    height: 100px;    /* <header>区域高度100px */
+    background: transparent;    /* <header>区域背景颜色为透明。 */
+    opacity: 1.0;    /* <header>区域内完全不透明 */
+}
+
+/* homeButton CSS Begin */
+#homeButton {
+    float: left;    /* 按钮向左浮动。 */
+    background: transparent;    /* 设置背景为透明 */
+    padding: 20px 40px;    /* 设置内边距为20px的垂直内边距和40px的水平内边距 */
+    font: 20px "JetBrains Mono";    /* 设置字体为20px大小的"JetBrains Mono" */
+    color: white;    /* 设置文字颜色为白色 */
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);    /* 添加文字阴影效果，偏移值为5px水平和5px垂直，模糊半径为10px，颜色为半透明黑色 */
+    border: none;    /* 移除边框 */
+    cursor: pointer;    /* 定义鼠标指针放在按钮边界范围内时所用的光标形状呈现为指示链接的指针（一只手） */
+    transition: transform 0.2s;    /* 添加过渡效果，当按钮发生变化时，使用0.2秒的时间完成过渡动画 */
+}
+
+#homeButton:hover {    /* 更改悬停在链接上时的样式 */
+    transform: scale(1.2);    /* 当鼠标悬停在按钮上时，将按钮放大到原始大小的1.2倍 */
+}
+/* homeButton CSS End */
+
+/* topNav CSS Begin */
+/* Search CSS Begin */
+.top-nav input[type=text] {    /* 搜索框的样式 */
+    float: right;    /* 向右浮动 */
+    color: white;    /* 字体颜色为白色 */
+    width: 200px;    /* 长度 */
+    box-sizing: border-box;    /* 盒子的宽度值和高度值包含元素的内边距和边框 */
+    border: 0px solid white;    /* 置四条边框的样式 */
+    border-radius: 10px;    /* 圆角边框圆角的大小 */
+    font-size: 20px;    /* 字体大小 */
+    background: transparent;    /* 搜索框透明 */
+    padding: 23px 20px;    /* 文本的上内边距和下内边距是 23px；右内边距和左内边距是 20px。 */
+    -webkit-transition: width 0.4s ease-in-out;    /* 使用WebKit引擎的浏览器（如Chrome和Safari）的过渡效果 */
+    transition: width 0.4s ease-in-out;    /* 通用的过渡效果 */
+    
+}
+
+.top-nav input[type=text]:focus {    /* 鼠标点击搜索框内后的样式变化 */
+    width: 400px;    /* 搜索框变长 */
+}
+/* Search CSS End */
+
+.top-nav a{    /* 设置导航栏内链接的样式 */
+    padding: 20px 40px;    /* 设置内边距为20px的垂直内边距和40px的水平内边距 */
+    font-size: 20px;    /* 设置字体为20px大小 */
+    float: right;    /* top-nav a中的元素向右浮动。 */
+    color: white;    /* top-nav a中的文字颜色为白色。 */
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);    /* 添加文字阴影效果，偏移值为5px水平和5px垂直，模糊半径为10px，颜色为半透明黑色 */
+    text-align: center;    /* top-nav a中的文本的水平对齐方式为居中对齐。 */
+    cursor: pointer;    /* 定义了鼠标指针放在top-nav a边界范围内时所用的光标形状呈现为指示链接的指针（一只手） */
+    transition: transform 0.2s;    /* 添加过渡效果，当按钮发生变化时，使用0.2秒的时间完成过渡动画 */
+}
+
+.top-nav a:hover {    /* 更改悬停在链接上时的样式 */
+    transform: scale(1.2);    /* 当鼠标悬停在按钮上时，将按钮放大到原始大小的1.2倍 */
+}
+/* topNav CSS End */
+/* <header> CSS End */
+
+/* <section> CSS Begin */
+section{    /* section样式 */
+    height: 800px;    /* section高度 */
+    background: transparent;    /* <section>区域背景颜色为透明。 */
+    opacity: 1.0;    /* <section>区域内完全不透明 */
+}
+/* <section> CSS End */
+
+/* <footer> CSS Begin */
+footer{    /* 将整个footer置底 */
+    position: absolute;    /* 绝对定位 */
+    bottom: 0;    /* 和网页的底边边缘的距离为零，将footer置底 */
+    width: 100%;    /* footer的宽度 */
+    height: 50px;    /* footer的高度 */
+    background: transparent;    /* <footer>区域背景颜色为透明。 */
+    opacity: 1.0;    /* <footer>区域内完全不透明 */
+}
+
+.footerAuthor{    /*设置文字*/
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);    /* 添加文字阴影效果，偏移值为3px水平和3px垂直，模糊半径为5px，颜色为半透明黑色 */
+    font-size: 20px;    /* 字体大小为20px */
+    color: white;    /* 字体颜色为白色 */
+    text-align: center;    /* 文字居中对齐 */
+}
+/* <footer> CSS End */

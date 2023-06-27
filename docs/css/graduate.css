@@ -1,0 +1,41 @@
+@charset "UTF-8";    /* 把样式表的编码设置为统一码 UTF-8 */
+
+/* graduate.html <section> CSS Begin */
+#graduate {
+    padding: 100px;    /* 添加内边距为100像素 */
+}
+
+h1 {
+    text-align: center;    /* 文本居中对齐 */
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);    /* 添加文字阴影效果，偏移值为5px水平和5px垂直，模糊半径为10px，颜色为半透明黑色 */
+    font-size: 30px;    /* 字体30px */
+    color: white;    /* 字体颜色为白色 */
+    padding: 20px;    /* 添加内边距为20像素 */
+}
+
+ul {
+    width: 400px;    /* 宽度为400像素 */
+    margin: 0 auto;    /* 上下外边距为0，左右外边距自动居中 */
+    list-style: none;    /* 去除列表样式 */
+    color: white;    /* 字体颜色为白色 */
+}
+
+li {
+    float: left;    /* 浮动到左侧 */
+    width: 80px;    /* 宽度为80像素 */
+    height: 80px;    /* 高度为80像素 */
+    background-color: #6312E7;    /* 背景颜色为紫色 */
+    margin-left: 10px;    /* 左外边距为10像素 */
+    font-weight: bold;    /* 文字加粗 */
+    font-size: 30px;    /* 字体大小为30像素 */
+    text-align: center;    /* 文本居中对齐 */
+    display: flex;    /* 使用 Flexbox 布局 */
+    flex-direction: column;    /* 将元素内部设置为垂直方向的列布局 */
+    justify-content: center;    /* 在主轴上居中对齐 */
+    align-items: center;    /* 在交叉轴上居中对齐 */
+}
+
+.title {
+    font-size: 18px;    /* 标题字体大小为18像素 */
+}
+/* graduate.html <section> CSS End */

@@ -1,0 +1,30 @@
+@charset "UTF-8";    /* 把样式表的编码设置为统一码 UTF-8 */
+
+/* calculator.html <section> CSS Begin */
+body {
+    color: white;    /* 设置所有字为白色 */
+}
+
+section table {
+    background-color: transparent;    /* 设置表格背景颜色为透明 */
+    width: 300px;    /* 设置表格宽度为300像素 */
+    padding: 100px 0;    /* 添加内边距为100像素 */
+    margin-left: auto;    /* 水平居中对齐：将左边距设为自动 */
+    margin-right: auto;    /* 水平居中对齐：将右边距设为自动 */
+}
+
+section .result {
+    border: solid 1px black;    /* 设置.result类元素的边框为黑色实线边框，宽度为1像素 */
+    color: red;    /* 设置.result类元素的文本颜色为红色 */
+    height: 25px;    /* 设置.result类元素的高度为25像素 */
+}
+
+section input {
+    font-size: 25px;    /* 设置所有input元素的字体大小为25像素 */
+}
+
+section input[type-button] {
+    width: 40px;    /* 设置type属性为button的input元素的宽度为40像素 */
+    height: 40px;    /* 设置type属性为button的input元素的高度为40像素 */
+}
+/* calculator.html <section> CSS End */
