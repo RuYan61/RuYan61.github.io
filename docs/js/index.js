@@ -1,4 +1,4 @@
-// index.html typewriter 打字机JS Begin
+// index.html typewriter 打字机 JS Begin
 const texts = ["JavaScript Assignment Blog"];    // 定义要循环显示的文本数组
 const delay = 100;    // 定义打字间隔的延时（以毫秒为单位）
 const typewriterElement = document.getElementById("typewriter");    // 获取要显示文本的 HTML 元素
@@ -28,4 +28,4 @@ function erase() {    // 擦除函数
 }
 
 type();    // 启动打字效果
-// index.html typewriter 打字机JS End
+// index.html typewriter 打字机 JS End
